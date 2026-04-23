@@ -16,23 +16,23 @@ const hideMenu = () => {
 closeMenu.addEventListener('click', hideMenu);
 overlay.addEventListener('click', hideMenu);
 
-function toggleFAQ(element) {
-    const allitems = document.querySelectorAll('.faq-items');
-    const content = element.querySelectorAll('.faq-content')
+function toggleFaq(element) {
+    const allItems = document.querySelectorAll('.faq-items');
+    const content = element.querySelector('.faq-content');
     const img = element.querySelector('img');
-    const openIcon = 'assets/+.svg';
-    const closeIcon = 'assets/-.svg';
-    const isopen = !content.style.maxHeight;
+    const openIcon = "/assets/+.svg";
+    const closeIcon = "/assets/-.svg";
+    const isOpening = ! content.style.maxHeight;
 
-    allitems.forEach(item => {
+    allItems.forEach(item => {
         const itemContent = item.querySelector('.faq-content');
         const itemImg = item.querySelector('img');
         itemContent.style.maxHeight = null;
-        itemImg.src = openIcon;
+        itemImg.src = openIcon
     });
 
-    if (isopen) {
-        content.style.maxHeight = content.scrollHeight + 'px';
+    if (isOpening) {
+        content.style.maxHeight = content.scrollHeight + "px";
         img.src = closeIcon;
     }
 }
